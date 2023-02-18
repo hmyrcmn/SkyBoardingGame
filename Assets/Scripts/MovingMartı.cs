@@ -11,22 +11,18 @@ public class MovingMartı : MonoBehaviour
     private Rigidbody rb;
     private float elapsedTime = 0f;
     public Animator MartiAnim;
-    private int  lives;
 
-     // Player objesine eriş
-        GameObject playerObj = GameObject.Find("Player");
-
-// PlayerSC component'ine eriş
-        //PlayerSC playerScript = playerObj.GetComponent<PlayerSC>();
-
+    public GameObject playerObject;
+    private PlayerSC playerSC;
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         MartiAnim =GetComponent<Animator>();
 
-       
-        
+         playerObject = GameObject.Find("Player"); // Oyuncu karakterinin GameObject'ini bulun
+         playerSC  = playerObject.GetComponent<PlayerSC>(); // Oyuncu karakterinin script bileşenini alın
+      
 
     }
 
@@ -50,15 +46,14 @@ public class MovingMartı : MonoBehaviour
             elapsedTime = 0f;
            print("kazannnn");
              
-            
-            // GainPoint fonksiyonunu çağır
-          //  playerScript.GainPoint();
+            //martı simit buluşlması puan al 
+            playerSC.GainPoint();
+      
     
-        }else if(other.gameObject.tag == "Martı"){
-             //lives =playerScript.PlayerLives--;
-            if(lives<0 ){
-                //playerScript.GameOver();
-            }
+        }else if(other.gameObject.tag == "Player"){
+            //martı player buluşması can azaltma
+            playerSC.DecLives(); // inplayer
+            
         }
     }
 

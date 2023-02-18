@@ -14,11 +14,15 @@ public class PlayerSC : MonoBehaviour
 
     private int PlayerPoint;
     public int PlayerLives=3;
-    PlayerSC player = FindObjectOfType<PlayerSC>();
+
+    public  GameObject[] simits;
+    //PlayerSC player = FindObjectOfType<PlayerSC>();
 
 
     private void Start()
     {
+        
+         simits = GameObject.FindGameObjectsWithTag("Simit");
         rigidBody = GetComponent<Rigidbody>();
 
        PlayerTurnAnim = GetComponent<Animator>();
@@ -107,13 +111,13 @@ public class PlayerSC : MonoBehaviour
 
     void FixedUpdate()
     {
-        GameObject[] simits = GameObject.FindGameObjectsWithTag("Simit");
+       // GameObject[] simits = GameObject.FindGameObjectsWithTag("Simit");
         foreach (GameObject simit in simits)
         {
-            if (simit.transform.position.y < -5.0f)
+            if (simit.transform.position.y < -5.0f || simit.transform.position.y >5.0f || simit.transform.position.x>10.0f || simit.transform.position.x<-10.0f)
             {
-                 print(transform.position.y);
-                Destroy(simit,5.0f);
+             
+                //Destroy(simit);
                
             }
         }
@@ -124,7 +128,14 @@ public class PlayerSC : MonoBehaviour
     }
     public void GameOver(){
         print(PlayerPoint);// in uı
-        Destroy(player,5.0f);// delete player
+        //Destroy(player,5.0f);// delete player
 
+    }
+    public void DecLives(){
+       if( PlayerLives>0){
+            PlayerLives--;
+       }else{
+            GameOver();
+       }
     }
 }

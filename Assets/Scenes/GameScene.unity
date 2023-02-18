@@ -154,7 +154,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &147313860
 BoxCollider:
@@ -271,7 +271,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &437868221
 Animator:
@@ -309,6 +309,7 @@ MonoBehaviour:
   speed: 0.5
   attackThreshold: 5
   MartiAnim: {fileID: 437868221}
+  playerObject: {fileID: 721263431}
 --- !u!65 &437868224
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -320,7 +321,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 6.4, y: 3.6, z: 0.2}
+  m_Size: {x: 2.64, y: 1.27, z: 0.2}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &437868225
 Rigidbody:
@@ -445,6 +446,7 @@ GameObject:
   - component: {fileID: 721263432}
   - component: {fileID: 721263435}
   - component: {fileID: 721263436}
+  - component: {fileID: 721263437}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -536,11 +538,10 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 963194228}
   - {fileID: 1044002506}
   - {fileID: 1153941945}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &721263435
 MonoBehaviour:
@@ -560,6 +561,8 @@ MonoBehaviour:
   SimitPF: {fileID: 8387658379521336307, guid: bd2ac30979140a1468b05b7e60d893f3, type: 3}
   spawnPoint: {fileID: 1153941945}
   SimitInstance: {fileID: 963194225}
+  PlayerLives: 3
+  simits: []
 --- !u!54 &721263436
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -576,6 +579,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!65 &721263437
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 721263431}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 4, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &868664918
 GameObject:
   m_ObjectHideFlags: 0
@@ -658,7 +674,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &963194225
 GameObject:
@@ -736,13 +752,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 1, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 721263434}
-  m_RootOrder: 0
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1044002505
 GameObject:
@@ -774,7 +790,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 721263434}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1044002507
 SpriteRenderer:
@@ -857,7 +873,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 721263434}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1442938297
 GameObject:
@@ -872,6 +888,7 @@ GameObject:
   - component: {fileID: 1442938299}
   - component: {fileID: 1442938298}
   - component: {fileID: 1442938302}
+  - component: {fileID: 1442938303}
   m_Layer: 0
   m_Name: "Mart\u01313"
   m_TagString: "Mart\u0131"
@@ -964,7 +981,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &1442938301
 Rigidbody:
@@ -998,6 +1015,20 @@ MonoBehaviour:
   speed: 0.33
   attackThreshold: 15
   MartiAnim: {fileID: 1442938298}
+  playerObject: {fileID: 721263431}
+--- !u!65 &1442938303
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1442938297}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.35, y: 1.35, z: 0.2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1807310079
 GameObject:
   m_ObjectHideFlags: 0
@@ -1011,6 +1042,7 @@ GameObject:
   - component: {fileID: 1807310081}
   - component: {fileID: 1807310080}
   - component: {fileID: 1807310084}
+  - component: {fileID: 1807310085}
   m_Layer: 0
   m_Name: "Mart\u01312"
   m_TagString: "Mart\u0131"
@@ -1103,7 +1135,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &1807310083
 Rigidbody:
@@ -1137,3 +1169,17 @@ MonoBehaviour:
   speed: 0.5
   attackThreshold: 10
   MartiAnim: {fileID: 1807310080}
+  playerObject: {fileID: 721263431}
+--- !u!65 &1807310085
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1807310079}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.64, y: 1.27, z: 0.2}
+  m_Center: {x: 0, y: 0, z: 0}
